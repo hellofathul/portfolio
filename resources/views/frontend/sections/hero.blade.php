@@ -6,7 +6,7 @@
                     <h3 class="typer-title wow fadeInUp" data-wow-delay="0.2s">I'm ui/ux designer</h3>
                     <h1 class="title wow fadeInUp" data-wow-delay="0.3s">Hi, I am Smith Jhon</h1>
                     <div class="desc wow fadeInUp" data-wow-delay="0.4s">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at, aperiam corrupti
+                        <p>Lore ipsum dolor sit amet consectetur adipisicing elit. Eaque at, aperiam corrupti
                             earum quasi, porro voluptatem commodi eos laboriosam nam quis nostrum, molestiae
                             nesciunt dolore.</p>
                     </div>
