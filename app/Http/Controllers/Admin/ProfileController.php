@@ -18,10 +18,10 @@ class ProfileController extends Controller
     public function edit(Request $request): View
     {
         return view('admin.profile.profile', [
-            'user' => $request->user(),
+            'user' => $request->user()
         ]);
     }
-    
+
     /**
      * Update the user's profile information.
      */
