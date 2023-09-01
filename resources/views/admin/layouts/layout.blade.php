@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/daterangepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body>
@@ -125,9 +125,11 @@
                                     'Title has been deleted.',
                                     'success'
                                 )
-                                setTimeout(function(){location.reload();},500);
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 500);
                             },
-                            
+
                             error: function(xhr, status, error) {
                                 console.log(error);
                             }
