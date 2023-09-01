@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Dashboard</title>
 
     <!-- General CSS Files -->
@@ -83,6 +84,7 @@
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Show dynamic validation errors -->
     <script>
@@ -91,6 +93,49 @@
                 toastr.error("{{ $error }}")
             @endforeach
         @endif
+    </script>
+    <script>
+        $(document).ready(function() {
+            //Csrf token
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            // SweetAlert2
+            $('body').on('click', '.delete-item', function(e) {
+                e.preventDefault();
+                let deleteUrl = $(this).attr('href');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: 'DELETE',
+                            url: deleteUrl,
+                            success: function(data) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Title has been deleted.',
+                                    'success'
+                                )
+                                setTimeout(function(){location.reload();},500);
+                            },
+                            
+                            error: function(xhr, status, error) {
+                                console.log(error);
+                            }
+                        })
+                    }
+                })
+            })
+        })
     </script>
 
     @stack('scripts')

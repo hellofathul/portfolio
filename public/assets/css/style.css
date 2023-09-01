@@ -1295,8 +1295,8 @@ table tr:hover .table-links {
   margin: 0 3px;
 }
 .page-item.active .page-link {
-  background-color: #6777ef;
-  border-color: #6777ef;
+  background-color: #146ff4;
+  border-color: #146ff4;
 }
 .page-item.disabled .page-link {
   border-color: transparent;

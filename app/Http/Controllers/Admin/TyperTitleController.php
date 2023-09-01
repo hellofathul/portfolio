@@ -54,7 +54,8 @@ class TyperTitleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $title = TyperTitle::findOrFail($id);
+        return view('admin.typer-title.edit', compact('title'));
     }
 
     /**
@@ -62,7 +63,15 @@ class TyperTitleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'max:200']
+        ]);
+
+        $edit = TyperTitle::findOrFail($id);
+        $edit->title = $request->title;
+        $edit->save();
+        toastr()->success('Updated Successfully', 'Typer Title');
+        return redirect()->route('admin.typer-title.index');
     }
 
     /**
@@ -70,6 +79,8 @@ class TyperTitleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $title = TyperTitle::findOrFail($id);
+        $title->delete();
+        toastr()->success('Title Deleted', 'Typer Title');
     }
 }
