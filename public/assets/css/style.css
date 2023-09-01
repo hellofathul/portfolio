@@ -787,7 +787,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-header h4 {
   font-size: 16px;
   line-height: 28px;
-  color: #146ff4;
+  color: #ff5f00;
   padding-right: 10px;
   margin-bottom: 0;
 }
@@ -1295,8 +1295,8 @@ table tr:hover .table-links {
   margin: 0 3px;
 }
 .page-item.active .page-link {
-  background-color: #146ff4;
-  border-color: #146ff4;
+  background-color: #ff5f00;
+  border-color: #ff5f00;
 }
 .page-item.disabled .page-link {
   border-color: transparent;
@@ -3404,7 +3404,7 @@ body.layout-3 .main-footer {
   background-color: #f8fafb;
 }
 .main-sidebar .sidebar-menu li.active a {
-  color: #146ff4;
+  color: #ff5f00;
   font-weight: 600;
   background-color: #f8fafb;
 }
@@ -3517,7 +3517,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
   transform: translateY(-50%);
   height: 25px;
   width: 4px;
-  background-color: #146ff4;
+  background-color: #ff5f00;
 }
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
   padding-left: 61px;
