@@ -24,6 +24,7 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -87,11 +88,12 @@
     <script>
         @if (!empty($errors->all()))
             @foreach ($errors->all() as $error)
-                toastr.error("{{$error}}")
+                toastr.error("{{ $error }}")
             @endforeach
         @endif
     </script>
 
+    @stack('scripts')
 </body>
 
 </html>
