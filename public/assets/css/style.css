@@ -64,7 +64,7 @@
 }
 
 a {
-  color: #6777ef;
+  color: #ff5f00;
   font-weight: 500;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -879,7 +879,7 @@ select.form-control:not([size]):not([multiple]) {
   background-position: center;
 }
 .card.card-primary {
-  border-top: 2px solid #6777ef;
+  border-top: 2px solid #ff5f00;
 }
 .card.card-secondary {
   border-top: 2px solid #cdd3d8;
