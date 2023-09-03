@@ -40,7 +40,8 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="https://nauval.in/">Admin Panel Fathul Amin</a>
+                    Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="https://nauval.in/">Admin Panel
+                        Fathul Amin</a>
                 </div>
                 <div class="footer-right">
                     1.0.0
@@ -65,6 +66,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css"
         integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="<?php echo e(asset('assets/js/plugins/summernote-bs4.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/plugins/jquery.selectric.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/plugins/jquery.uploadPreview.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/plugins/bootstrap-tagsinput.min.js')); ?>"></script>
