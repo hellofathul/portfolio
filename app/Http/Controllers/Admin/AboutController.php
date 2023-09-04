@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -12,7 +13,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('admin.about.index');
+        $about = About::first();
+        return view('admin.about.index', compact('about'));
     }
 
     /**
@@ -48,11 +50,37 @@ class AboutController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storage.        
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'max:200'],
+            'description' => ['required', 'max:5000'],
+            'image' => ['image', 'max:20000'],
+            'resume' => ['mimes:pdf,csv,txt', 'max:20000'],
+        ]);
+        $about = About::first();
+        $imagePath = handleUpload('image', $about);
+        $resumePath = handleUpload('resume', $about);
+
+        //Check whether the data exists or not, if not exist it will create and vice versa
+        About::updateOrCreate(
+            ['id' => $id],
+            [
+                'title' => $request->title,
+                'description' => $request->description,
+                'image' => (!empty($imagePath) ? $imagePath : $about->image),
+                'resume' => (!empty($resumePath) ? $resumePath : $about->resume)
+            ]
+        );
+        toastr()->success('Updated Successfully', 'About Section');
+        return redirect()->back();
+    }
+
+    public function resumeDownload() {
+        $about = About::first();
+        return response()->download(public_path($about->resume));
     }
 
     /**

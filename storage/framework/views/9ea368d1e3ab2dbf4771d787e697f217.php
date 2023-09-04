@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <?php $__currentLoopData = $service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-lg-4">
+                <div class="col-lg-4 <?php echo e($loop->index > 2 ? 'mt-4': ''); ?>">
                     <div class="single-service">
                         <h3 class="title wow fadeInRight" data-wow-delay="0.3s"><?php echo e($service->name); ?></h3>
                         <div class="desc wow fadeInRight" data-wow-delay="0.4s">
