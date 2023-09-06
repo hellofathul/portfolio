@@ -33,9 +33,7 @@ Route::get('/blog-details', function () {
     return view('frontend.blog-details');
 });
 
-Route::get('/portfolio-details', function () {
-    return view('frontend.portfolio-details');
-});
+Route::get('/portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
 
 
 /** Admin Routes */

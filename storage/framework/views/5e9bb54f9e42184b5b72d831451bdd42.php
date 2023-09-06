@@ -32,9 +32,10 @@
                             <div class="portfolio-content">
                                 <a href="<?php echo e(asset($item->image)); ?>" data-lity class="icon"><i
                                         class="fas fa-plus"></i></a>
-                                <h4 class="title"><a href="portfolio-details.html"><?php echo e($item->name); ?></a></h4>
+                                <h4 class="title"><a
+                                        href="<?php echo e(route('show.portfolio', $item->id)); ?>"><?php echo e($item->title); ?></a></h4>
                                 <div class="desc">
-                                    <p><?php echo Str::limit($item->description, 100); ?></p>
+                                    <p><?php echo Str::limit(strip_tags($item->description), 100); ?></p>
                                 </div>
                             </div>
                         </div>

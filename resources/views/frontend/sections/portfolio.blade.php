@@ -23,7 +23,7 @@
         <div class="portfolio-wrapper">
             <div class="row portfolios">
                 @foreach ($portfolioItems as $item)
-                    <div data-wow-delay="0.3s" class="col-md-6 col-lg-4 filter-item {{$item->category->slug}}">
+                    <div data-wow-delay="0.3s" class="col-md-6 col-lg-4 filter-item {{ $item->category->slug }}">
                         <div class="single-portfolio">
                             <figure class="portfolio-image">
                                 <img src="{{ asset($item->image) }}" alt="">
@@ -31,9 +31,10 @@
                             <div class="portfolio-content">
                                 <a href="{{ asset($item->image) }}" data-lity class="icon"><i
                                         class="fas fa-plus"></i></a>
-                                <h4 class="title"><a href="portfolio-details.html">{{ $item->name }}</a></h4>
+                                <h4 class="title"><a
+                                        href="{{ route('show.portfolio', $item->id) }}">{{ $item->title }}</a></h4>
                                 <div class="desc">
-                                    <p>{!! Str::limit($item->description, 100) !!}</p>
+                                    <p>{!! Str::limit(strip_tags($item->description), 100) !!}</p>
                                 </div>
                             </div>
                         </div>
