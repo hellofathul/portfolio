@@ -33,7 +33,7 @@ class PortfolioItemController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => ['required', 'image:20000'],
+            'image' => ['image', 'image:20000'],
             'title' => ['required', 'max:200'],
             'description' => ['required'],
             'category_id' => ['required', 'numeric'],
@@ -68,8 +68,9 @@ class PortfolioItemController extends Controller
      */
     public function edit(string $id)
     {
+        $categories = Category::all();
         $portfolio_item = PortfolioItem::findOrFail($id);
-        return view('admin.portfolio-item.edit', compact('portfolio_item'));
+        return view('admin.portfolio-item.edit', compact('portfolio_item', 'categories'));
     }
 
     /**
@@ -77,7 +78,26 @@ class PortfolioItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'image' => ['image', 'image:20000'],
+            'title' => ['required', 'max:200'],
+            'description' => ['required'],
+            'category_id' => ['required', 'numeric'],
+            'client' => ['max:200'],
+            'website' => ['url']
+        ]);
+
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        $imagePath = handleUpload('image', $portfolioItem);
+        $portfolioItem->image = (!empty($imagePath) ? $imagePath : $portfolioItem->image);
+        $portfolioItem->title = $request->title;
+        $portfolioItem->description = $request->description;
+        $portfolioItem->category_id = $request->category_id;
+        $portfolioItem->client = $request->client;
+        $portfolioItem->website = $request->website;
+        $portfolioItem->save();
+        toastr()->success('Portfolio Item Updated Successfully', 'Success');
+        return redirect()->route('admin.portfolio-item.index');
     }
 
     /**
@@ -85,6 +105,9 @@ class PortfolioItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        deleteFileIfExist($portfolioItem->image);
+        $portfolioItem->delete();
+        toastr()->success('Portfolio Item Deleted', 'Success');
     }
 }
