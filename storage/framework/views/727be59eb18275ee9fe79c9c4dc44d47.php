@@ -18,15 +18,15 @@
     <!-- Portfolio-Area-End -->
 
     <!-- Skills-Area-Start -->
-    <?php echo $__env->make('frontend.sections.skills', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
     <!-- Skills-Area-End -->
 
     <!-- Experience-Area-Start -->
-    <?php echo $__env->make('frontend.sections.experience', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
     <!-- Experience-Area-End -->
 
     <!-- Testimonial-Area-Start -->
-    <?php echo $__env->make('frontend.sections.testimonial', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
     <!-- Testimonial-Area-End -->
 
     <!-- Blog-Area-Start -->
