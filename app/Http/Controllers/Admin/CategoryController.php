@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index(CategoryDataTable $dataTable)
     {
         return $dataTable->render('admin.portfolio-category.index');
-        
+
     }
 
     /**
@@ -56,7 +56,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.portfolio-category.edit', compact('category'));
     }
 
     /**
@@ -64,14 +65,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'max:200']
+        ]);
+
+        $edit_category = Category::findOrFail($id);
+        $edit_category->name = $request->name;
+        $edit_category->slug = \Str::slug($request->name);
+        $edit_category->save();
+
+        toastr()->success('Updated Successfully', 'Category');
+        return redirect()->route('admin.category.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-    {
-        //
+{
+        $category = Category::findOrFail($id);
+        $category->delete();
+        toastr()->success('Category Deleted', 'Portfolio');
     }
 }
