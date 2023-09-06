@@ -120,14 +120,22 @@
                             type: 'DELETE',
                             url: deleteUrl,
                             success: function(data) {
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Title has been deleted.',
-                                    'success'
-                                )
-                                setTimeout(function() {
-                                    location.reload();
-                                }, 500);
+                                if (data.status == 'error') {
+                                    Swal.fire(
+                                        'You can not delete!',
+                                        'This category contain items that cant be deleted!',
+                                        'error'
+                                    )
+                                } else {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Title has been deleted.',
+                                        'success'
+                                    )
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 500);
+                                }
                             },
 
                             error: function(xhr, status, error) {

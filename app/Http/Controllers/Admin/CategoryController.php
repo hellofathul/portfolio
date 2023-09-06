@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DataTables\CategoryDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\PortfolioItem;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -82,9 +83,13 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-{
+    {
         $category = Category::findOrFail($id);
-        $category->delete();
-        toastr()->success('Category Deleted', 'Portfolio');
+        $hasItem = PortfolioItem::where('category_id', $category->id)->count();
+        if($hasItem == 0) {
+            $category->delete();
+            return true;
+        }
+        return response(['status' => 'error']);
     }
 }
