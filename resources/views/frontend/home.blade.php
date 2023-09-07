@@ -30,7 +30,7 @@
     <!-- Testimonial-Area-End -->
 
     <!-- Blog-Area-Start -->
-    @include('frontend.sections.blog')
+    {{-- @include('frontend.sections.blog') --}}
     <!-- Blog-Area-End -->
 
     <!-- Contact-Area-Start -->

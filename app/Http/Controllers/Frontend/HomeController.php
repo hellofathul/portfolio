@@ -43,4 +43,8 @@ class HomeController extends Controller
         $portfolio = PortfolioItem::findOrFail($id);
         return view('frontend.portfolio-details', compact('portfolio'));
     }
+
+    public function contact(Request $request) {
+            // dd($request->all());
+    }
 }

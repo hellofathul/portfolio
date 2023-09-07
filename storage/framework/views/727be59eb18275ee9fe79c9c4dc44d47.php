@@ -30,7 +30,7 @@
     <!-- Testimonial-Area-End -->
 
     <!-- Blog-Area-Start -->
-    <?php echo $__env->make('frontend.sections.blog', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
     <!-- Blog-Area-End -->
 
     <!-- Contact-Area-Start -->
