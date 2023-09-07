@@ -44,7 +44,15 @@ class HomeController extends Controller
         return view('frontend.portfolio-details', compact('portfolio'));
     }
 
-    public function contact(Request $request) {
-            // dd($request->all());
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'max:200'],
+            'subject' => ['required', 'max:200'],
+            'email' => ['required', 'email'],
+            'message' => ['required', 'max:2000'],
+        ]);
+
+
     }
 }
