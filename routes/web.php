@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactSectionSettingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Models\Blog;
+use App\Models\ContactSectionSetting;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +55,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('portfolio-item', PortfolioItemController::class);
     Route::resource('portfolio-section-setting', PortfolioSectionSettingController::class);
     Route::resource('blog-category', BlogCategoryController::class);
+    Route::resource('contact-section-setting', ContactSectionSettingController::class);
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

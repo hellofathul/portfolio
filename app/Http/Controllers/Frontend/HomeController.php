@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
 use App\Models\About;
 use App\Models\Category;
+use App\Models\ContactSectionSetting;
 use App\Models\Hero;
 use App\Models\PortfolioItem;
 use App\Models\PortfolioSectionSetting;
@@ -26,6 +27,7 @@ class HomeController extends Controller
         $portfolioTitle = PortfolioSectionSetting::first();
         $portfolioCategory = Category::all();
         $portfolioItems = PortfolioItem::all();
+        $contactTitle = ContactSectionSetting::first();
         return view(
             'frontend.home',
             compact(
@@ -36,6 +38,7 @@ class HomeController extends Controller
                 'portfolioTitle',
                 'portfolioCategory',
                 'portfolioItems',
+                'contactTitle'
             )
         );
     }
