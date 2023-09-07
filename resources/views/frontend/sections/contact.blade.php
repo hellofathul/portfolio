@@ -80,7 +80,12 @@
                         $('#submit_btn').text('Loading...');
                     },
                     success: function(response) {
-                        console.log(response)
+                        if (response.status == 'success') {
+                            toastr.success(response.message);
+                            $('#submit_btn').prop("disabled", false);
+                            $('#submit_btn').text('Send Now');
+                            $('#contact-form').trigger('reset');
+                        }
                     },
                     error: function(response) {
                         if (response.status == '422') {
