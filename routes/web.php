@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FooterContactInfoController;
 use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
+use App\Http\Controllers\Admin\FooterUsefulLinkController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
@@ -62,6 +63,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('footer-social', FooterSocialLinkController::class);
     Route::resource('footer-info', FooterInfoController::class);
     Route::resource('footer-contact-info', FooterContactInfoController::class);
+    Route::resource('footer-useful-link', FooterUsefulLinkController::class);
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
