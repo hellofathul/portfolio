@@ -11,11 +11,14 @@ use App\Http\Controllers\Admin\FooterHelpLinkController;
 use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
 use App\Http\Controllers\Admin\FooterUsefulLinkController;
+use App\Http\Controllers\Admin\GeneralSettingController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\SEOSettingController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Models\Blog;
@@ -67,6 +70,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('footer-contact-info', FooterContactInfoController::class);
     Route::resource('footer-useful-link', FooterUsefulLinkController::class);
     Route::resource('footer-help-link', FooterHelpLinkController::class);
+    Route::resource('general-setting', GeneralSettingController::class);
+    Route::resource('seo-setting', SEOSettingController::class);
+    Route::get('settings', SettingController::class)->name('settings.index');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

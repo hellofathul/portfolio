@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg main_menu" id="main_menu_area">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="<?php echo e(asset('frontend/assets/images/logo.png')); ?>" alt="Fathul Amin">
+        <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+            <img src="<?php echo e(asset($generalSetting->logo)); ?>" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,4 +27,5 @@
             </ul>
         </div>
     </div>
-</nav><?php /**PATH C:\laragon\www\portfolio\resources\views/frontend/layouts/navbar.blade.php ENDPATH**/ ?>
+</nav>
+<?php /**PATH C:\laragon\www\portfolio\resources\views/frontend/layouts/navbar.blade.php ENDPATH**/ ?>

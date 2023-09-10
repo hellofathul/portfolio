@@ -12,7 +12,7 @@
             <div class="col-md-12 col-lg-3 widget">
                 <div class="text-box">
                     <figure class="footer-logo">
-                        <img src="images/logo.png" alt="">
+                        <img src="<?php echo e(asset($generalSetting->footer_logo)); ?>" alt="">
                     </figure>
                     <p><?php echo e($footerInfo->info); ?></p>
                     <ul class="d-flex flex-wrap">

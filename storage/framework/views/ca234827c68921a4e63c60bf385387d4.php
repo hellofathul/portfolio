@@ -1,3 +1,8 @@
+<?php
+    $generalSetting = \App\Models\GeneralSetting::first();
+    $SEOSetting = \App\Models\SEOSetting::first();
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -6,8 +11,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
-    <title>Portfolio - Fathul Amin</title>
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.png" />
+    <meta name="description" content="<?php echo e(@$SEOSetting->description); ?>">
+    <meta name="keywords" content="<?php echo e(@$SEOSetting->keywords); ?>">
+    <title><?php echo e(@$SEOSetting->title); ?></title>
+    <link rel="shortcut icon" type="image/ico" href="<?php echo e(asset($generalSetting->favicon)); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/css/normalize.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/css/style-plugin-collection.css')); ?>">
@@ -21,7 +28,7 @@
         <img src="<?php echo e(asset('frontend/assets/images/preloader.gif')); ?>" alt="">
     </div>
 
-   <?php echo $__env->make('frontend.layouts.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('frontend.layouts.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="main_wrapper" data-bs-spy="scroll" data-bs-target="#main_menu_area" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary" tabindex="0">

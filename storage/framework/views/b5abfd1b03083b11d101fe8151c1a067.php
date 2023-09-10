@@ -91,6 +91,7 @@
                     <li><a class="nav-link" href="<?php echo e(route('admin.footer-useful-link.index')); ?>">Useful Links</a></li>
                 </ul>
             </li>
+            <li><a class="nav-link" href="<?php echo e(route('admin.settings.index')); ?>"><i class="far fa-square"></i> <span>Settings</span></a></li>
             
 
         </ul>

@@ -1,3 +1,8 @@
+@php
+    $generalSetting = \App\Models\GeneralSetting::first();
+    $SEOSetting = \App\Models\SEOSetting::first();
+@endphp
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -6,8 +11,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Portfolio - Fathul Amin</title>
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.png" />
+    <meta name="description" content="{{ @$SEOSetting->description }}">
+    <meta name="keywords" content="{{ @$SEOSetting->keywords }}">
+    <title>{{ @$SEOSetting->title }}</title>
+    <link rel="shortcut icon" type="image/ico" href="{{ asset($generalSetting->favicon) }}" />
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style-plugin-collection.css') }}">
@@ -18,10 +25,10 @@
 
 <body>
     <div class="preloader">
-        <img src="{{asset('frontend/assets/images/preloader.gif')}}" alt="">
+        <img src="{{ asset('frontend/assets/images/preloader.gif') }}" alt="">
     </div>
 
-   @include('frontend.layouts.navbar')
+    @include('frontend.layouts.navbar')
 
     <div class="main_wrapper" data-bs-spy="scroll" data-bs-target="#main_menu_area" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary" tabindex="0">
