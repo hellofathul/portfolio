@@ -3445,11 +3445,11 @@ body.layout-3 .main-footer {
   font-weight: 400;
 }
 .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
-  color: #6777ef;
+  color: #ff5f00;
   background-color: inherit;
 }
 .main-sidebar .sidebar-menu li ul.dropdown-menu li.active > a {
-  color: #6777ef;
+  color: #ff5f00;
   font-weight: 600;
 }
 .main-sidebar .sidebar-menu li ul.dropdown-menu li a i {

@@ -40,16 +40,9 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="nav-item active">
-                <a href="index.html" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Dropdown</span></a>
-                <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="">test</a></li>
-
-                </ul>
+            <li class="nav-item">
+                <a href="<?php echo e(route('dashboard')); ?>" class="nav-link"><i
+                        class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Sections</li>
             <li class="nav-item dropdown">
@@ -78,20 +71,29 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Contact</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="<?php echo e(route('admin.contact-section-setting.index')); ?>">Section Setting</a></li>
+                    <li><a class="nav-link" href="<?php echo e(route('admin.contact-section-setting.index')); ?>">Section
+                            Setting</a></li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li
+                class="nav-item dropdown <?php echo e(setSidebarActive(['admin.footer-social.*', 'admin.footer-info.*', 'admin.footer-contact-info.*', 'admin.footer-useful-link.*'])); ?>">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Footer</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="<?php echo e(route('admin.footer-social.index')); ?>">Social Links</a></li>
-                    <li><a class="nav-link" href="<?php echo e(route('admin.footer-info.index')); ?>">Information</a></li>
-                    <li><a class="nav-link" href="<?php echo e(route('admin.footer-contact-info.index')); ?>">Contact Info</a></li>
-                    <li><a class="nav-link" href="<?php echo e(route('admin.footer-useful-link.index')); ?>">Useful Links</a></li>
+                    <li class="<?php echo e(setSidebarActive(['admin.footer-social.*'])); ?>"><a class="nav-link"
+                            href="<?php echo e(route('admin.footer-social.index')); ?>">Social Links</a></li>
+                    <li class="<?php echo e(setSidebarActive(['admin.footer-info.*'])); ?>"><a class="nav-link"
+                            href="<?php echo e(route('admin.footer-info.index')); ?>">Information</a></li>
+                    <li class="<?php echo e(setSidebarActive(['admin.footer-contact-info.*'])); ?>"><a class="nav-link"
+                            href="<?php echo e(route('admin.footer-contact-info.index')); ?>">Contact Info</a></li>
+                    <li class="<?php echo e(setSidebarActive(['admin.footer-useful-link.*'])); ?>"><a class="nav-link"
+                            href="<?php echo e(route('admin.footer-useful-link.index')); ?>">Useful Links</a></li>
                 </ul>
             </li>
-            <li><a class="nav-link" href="<?php echo e(route('admin.settings.index')); ?>"><i class="far fa-square"></i> <span>Settings</span></a></li>
+            <li class="menu-header">Settings</li>
+            <li class="<?php echo e(setSidebarActive(['admin.settings.*'])); ?>"><a class="nav-link"
+                    href="<?php echo e(route('admin.settings.index')); ?>"><i class="far fa-square"></i>
+                    <span>Settings</span></a></li>
             
 
         </ul>
