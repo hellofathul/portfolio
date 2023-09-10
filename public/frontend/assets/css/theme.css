@@ -201,7 +201,7 @@ Button-Styles
 .main_menu .navbar-nav li a {
     position: relative;
     display: block;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
@@ -448,7 +448,7 @@ Button-Styles
     font-size: 15px;
     color: #ff885e;
     border: 1px solid #ff885e;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 700;
     padding: 10px 30px;
     cursor: pointer;
@@ -1093,7 +1093,7 @@ Footer-Area
     padding: 25px 15px;
     font-size: 16px;
     color: #fff;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 400;
 }
 
@@ -1394,7 +1394,7 @@ Footer-Area
 
 .single-navigation .nav-link .text {
     font-size: 22px;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 700;
     color: #282828;
     display: -webkit-box;

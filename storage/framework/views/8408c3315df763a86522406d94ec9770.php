@@ -21,7 +21,11 @@
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/plugins/daterangepicker.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/plugins/select2.min.css')); ?>">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.10.0/css/bootstrap-iconpicker.min.css">
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/style.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/components.css')); ?>">
@@ -73,6 +77,10 @@
     <script src="<?php echo e(asset('assets/js/plugins/bootstrap-timepicker.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/plugins/daterangepicker.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/plugins/select2.full.min.js')); ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.10.0/js/bootstrap-iconpicker-iconset-all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.10.0/js/bootstrap-iconpicker.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.10.0/js/bootstrap-iconpicker.min.js"></script>
+    
 
 
     <!-- Template JS File -->

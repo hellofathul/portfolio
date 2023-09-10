@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Roboto&family=Source+Code+Pro:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap');
 * {
     outline: none;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.8em;
@@ -53,7 +53,7 @@ h6 {
     font-weight: 800;
     margin: 0 0 15px;
     line-height: 1.2em;
-    font-family: 'Source Code Pro', sans-serif;
+    font-family: 'Jost', sans-serif;
     color: #190844;
 }
 
