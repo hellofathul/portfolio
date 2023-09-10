@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactSectionSettingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FooterContactInfoController;
+use App\Http\Controllers\Admin\FooterHelpLinkController;
 use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
 use App\Http\Controllers\Admin\FooterUsefulLinkController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Models\Blog;
 use App\Models\ContactSectionSetting;
+use App\Models\FooterHelpLink;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,6 +66,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('footer-info', FooterInfoController::class);
     Route::resource('footer-contact-info', FooterContactInfoController::class);
     Route::resource('footer-useful-link', FooterUsefulLinkController::class);
+    Route::resource('footer-help-link', FooterHelpLinkController::class);
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
